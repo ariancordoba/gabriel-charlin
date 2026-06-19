@@ -84,9 +84,9 @@ body {
 
 .name {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(3.2rem, 9vw, 6.5rem);
-  letter-spacing: 0.04em;
+  letter-spacing: 0em;
   color: var(--text);
   line-height: 1;
   clip-path: inset(0 102% 0 0);
@@ -141,6 +141,53 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ————————————————
+   SCROLL HINT
+———————————————— */
+
+.scroll-hint {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--text);
+  opacity: 0;
+  animation: scrollHintAppear 1s ease 3.6s forwards;
+}
+
+@keyframes scrollHintAppear {
+  to { opacity: 0.45; }
+}
+
+.scroll-hint:hover {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-chevron {
+  width: 26px;
+  display: block;
+  animation: chevronDrop 2s ease-in-out infinite;
+}
+
+.scroll-chevron-2 {
+  animation: chevronDrop 2s ease-in-out infinite 0.22s;
+}
+
+@keyframes chevronDrop {
+  0%, 100% { transform: translateY(-3px); opacity: 0.3; }
+  50%       { transform: translateY(4px);  opacity: 1;   }
 }
 
 /* ————————————————

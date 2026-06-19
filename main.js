@@ -178,6 +178,17 @@
   if (video.readyState >= 3) startVideo();
 
   // ——————————————————————————————
+  // Scroll hint
+  // ——————————————————————————————
+
+  var scrollHint = document.querySelector('.scroll-hint');
+  if (scrollHint) {
+    scrollHint.addEventListener('click', function () {
+      document.getElementById('galeria').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  // ——————————————————————————————
   // Animación de firma
   // ——————————————————————————————
 
