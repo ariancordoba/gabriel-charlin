@@ -1,18 +1,37 @@
 (function () {
   'use strict';
 
-  // PAINTINGS viene de config.js — editá ese archivo para cambiar imágenes y títulos
-
-  const TOTAL = PAINTINGS.length;
+  // Todo viene de config.js → objeto SITE
+  const { hero, sobre, footer, galeria } = SITE;
+  const TOTAL = galeria.length;
 
   // ——————————————————————————————
-  // Gallery — CMS cards con título
+  // Poblar contenido desde config
+  // ——————————————————————————————
+
+  // Hero
+  document.querySelector('.name').textContent = hero.nombre;
+  document.querySelector('.subtitle').textContent = hero.subtitulo;
+  document.getElementById('hero-video').src = hero.video;
+
+  // Sobre él
+  document.querySelector('.sobre-text').textContent = sobre;
+
+  // Footer
+  document.querySelector('.footer-name').textContent = footer.nombre;
+  document.querySelector('.footer-year').textContent = footer.anio;
+
+  // Título de la pestaña
+  document.title = hero.nombre + ' — Pintor';
+
+  // ——————————————————————————————
+  // Gallery — CMS cards
   // ——————————————————————————————
 
   const gallery = document.getElementById('gallery');
 
-  PAINTINGS.forEach(function (painting, i) {
-    const title = (painting.title || '').trim() || 'Sin título';
+  galeria.forEach(function (obra, i) {
+    const title = (obra.title || '').trim() || 'Sin título';
     const num = String(i + 1).padStart(2, '0');
 
     const card = document.createElement('div');
@@ -23,7 +42,7 @@
     imgWrap.className = 'card-img-wrap';
 
     const img = document.createElement('img');
-    img.src = painting.src;
+    img.src = obra.src;
     img.alt = title;
     img.loading = i < 8 ? 'eager' : 'lazy';
     img.decoding = 'async';
@@ -62,9 +81,9 @@
 
   function openLightbox(index) {
     currentIndex = ((index % TOTAL) + TOTAL) % TOTAL;
-    const p = PAINTINGS[currentIndex];
-    const t = (p.title || '').trim() || 'Sin título';
-    lbImg.src = p.src;
+    const obra = galeria[currentIndex];
+    const t = (obra.title || '').trim() || 'Sin título';
+    lbImg.src = obra.src;
     lbImg.alt = t;
     lbTitleEl.textContent = t;
     lightbox.classList.add('open');
@@ -82,9 +101,9 @@
 
   function navigate(delta) {
     currentIndex = ((currentIndex + delta) % TOTAL + TOTAL) % TOTAL;
-    const p = PAINTINGS[currentIndex];
-    const t = (p.title || '').trim() || 'Sin título';
-    lbImg.src = p.src;
+    const obra = galeria[currentIndex];
+    const t = (obra.title || '').trim() || 'Sin título';
+    lbImg.src = obra.src;
     lbImg.alt = t;
     lbTitleEl.textContent = t;
   }
