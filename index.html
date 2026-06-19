@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriel Charlin — Pintor</title>
+  <meta name="description" content="Obra pictórica de Gabriel Charlin, pintor argentino.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="hero">
+  <div class="hero-inner">
+    <div class="signature-block">
+      <h1 class="name">Gabriel Charlin</h1>
+      <svg class="flourish" viewBox="0 0 560 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path id="flourish-path"
+          d="M 2,22 C 30,14 80,28 140,20 C 200,12 260,24 330,18 C 390,12 440,22 500,16 C 525,13 542,18 555,14"
+          fill="none" stroke="#C8A96E" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p class="subtitle">Pintor &middot; Argentina</p>
+  </div>
+</header>
+
+<section id="galeria">
+  <div class="gallery" id="gallery"></div>
+</section>
+
+<section id="sobre">
+  <div class="sobre-inner">
+    <p class="sobre-text">
+      Gabriel Charlin pinta desde que tiene memoria. Sus cuadros son ventanas: el árbol
+      que dobla con el viento del sur, el gallo que reina en el gallinero, la iglesia de
+      pueblo con el cielo de tarde detrás. Cada obra está hecha de paciencia, turpentina
+      y luz de fin de día.
+    </p>
+  </div>
+</section>
+
+<footer id="footer">
+  <span class="footer-name">Gabriel Charlin</span>
+  <span class="footer-sep">&middot;</span>
+  <span class="footer-year">2025</span>
+</footer>
+
+<div id="lightbox" role="dialog" aria-label="Imagen ampliada" aria-hidden="true">
+  <button id="lb-close" aria-label="Cerrar">&#x2715;</button>
+  <button id="lb-prev" aria-label="Anterior">&#x2039;</button>
+  <div class="lb-img-wrap">
+    <img id="lb-img" src="" alt="">
+  </div>
+  <button id="lb-next" aria-label="Siguiente">&#x203A;</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
