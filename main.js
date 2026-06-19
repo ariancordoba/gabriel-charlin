@@ -188,6 +188,13 @@
     });
   }
 
+  var heroCta = document.getElementById('hero-cta');
+  if (heroCta) {
+    heroCta.addEventListener('click', function () {
+      document.getElementById('galeria').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
   // ——————————————————————————————
   // Animación de firma
   // ——————————————————————————————
@@ -210,6 +217,8 @@
         name.classList.add('visible');
         setTimeout(function () { if (flourishPath) flourishPath.classList.add('animate'); }, 700);
         setTimeout(function () { subtitle.classList.add('visible'); }, 2000);
+        var cta = document.getElementById('hero-cta');
+        if (cta) setTimeout(function () { cta.classList.add('visible'); }, 2600);
       });
     });
   }

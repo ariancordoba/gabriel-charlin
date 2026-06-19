@@ -144,6 +144,38 @@ body {
 }
 
 /* ————————————————
+   HERO CTA
+———————————————— */
+
+.hero-cta {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 13px 36px;
+  background: none;
+  border: 1px solid rgba(240, 235, 224, 0.35);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.hero-cta.visible {
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-cta:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(200, 169, 110, 0.06);
+}
+
+/* ————————————————
    SCROLL HINT
 ———————————————— */
 
