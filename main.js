@@ -214,10 +214,18 @@
     });
   }
 
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(runSignature);
+  function launchSignature() {
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(runSignature);
+    } else {
+      runSignature();
+    }
+  }
+
+  if (document.body.classList.contains('birthday-active')) {
+    document.addEventListener('birthdayDismissed', launchSignature, { once: true });
   } else {
-    window.addEventListener('load', runSignature);
+    launchSignature();
   }
 
 })();

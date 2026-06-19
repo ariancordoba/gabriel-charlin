@@ -1,3 +1,11 @@
+/* Oculta el hero mientras el birthday está activo */
+body.birthday-active .hero-inner,
+body.birthday-active .scroll-hint {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* ——— Overlay ——— */
 #birthday-overlay {
   position: fixed;
   inset: 0;
@@ -9,59 +17,74 @@
 #birthday-canvas {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
 }
 
+/* ——— Globos ——— */
 .b-balloon {
   position: absolute;
   bottom: -120px;
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
   pointer-events: none;
   animation: balloonUp linear forwards;
   will-change: transform;
 }
 
 @keyframes balloonUp {
-  0%   { transform: translateY(0)   rotate(-4deg); opacity: 1; }
+  0%   { transform: translateY(0)     rotate(-4deg); opacity: 1; }
   50%  { transform: translateY(-50vh) rotate(4deg);  opacity: 1; }
   90%  { opacity: 1; }
   100% { transform: translateY(-115vh) rotate(-2deg); opacity: 0; }
 }
 
+/* ——— Mensaje ——— */
 #birthday-msg {
   position: absolute;
-  top: 50%;
+  top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 300;
   font-style: italic;
-  font-size: clamp(2.6rem, 7vw, 5rem);
+  font-size: clamp(2.2rem, 8vw, 5rem);
   color: #F0EBE0;
   text-align: center;
   line-height: 1.35;
   text-shadow: 0 4px 48px rgba(0,0,0,0.9), 0 0 80px rgba(0,0,0,0.5);
   pointer-events: none;
+  width: 90%;
   animation: msgAppear 1s cubic-bezier(0.22, 0.61, 0.36, 1) 0.6s both;
 }
 
 #birthday-sub {
   position: absolute;
-  top: calc(50% + clamp(2.6rem, 7vw, 5rem) * 1.35 + 12px);
+  bottom: clamp(24px, 6vh, 56px);
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  font-size: 0.65rem;
+  font-size: clamp(0.55rem, 2vw, 0.65rem);
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(240,235,224,0.55);
+  color: rgba(240, 235, 224, 0.5);
   pointer-events: none;
   white-space: nowrap;
-  animation: msgAppear 1s ease 1.4s both;
+  animation: msgAppear 1s ease 1.5s both;
 }
 
 @keyframes msgAppear {
   from { opacity: 0; transform: translate(-50%, -44%) scale(0.93); }
   to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* sub no hereda el translate vertical del keyframe */
+#birthday-sub {
+  animation: subAppear 1s ease 1.5s both;
+}
+
+@keyframes subAppear {
+  from { opacity: 0; transform: translateX(-50%) translateY(6px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
