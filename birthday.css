@@ -1,0 +1,67 @@
+#birthday-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#birthday-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.b-balloon {
+  position: absolute;
+  bottom: -120px;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  pointer-events: none;
+  animation: balloonUp linear forwards;
+  will-change: transform;
+}
+
+@keyframes balloonUp {
+  0%   { transform: translateY(0)   rotate(-4deg); opacity: 1; }
+  50%  { transform: translateY(-50vh) rotate(4deg);  opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(-115vh) rotate(-2deg); opacity: 0; }
+}
+
+#birthday-msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  color: #F0EBE0;
+  text-align: center;
+  line-height: 1.35;
+  text-shadow: 0 4px 48px rgba(0,0,0,0.9), 0 0 80px rgba(0,0,0,0.5);
+  pointer-events: none;
+  animation: msgAppear 1s cubic-bezier(0.22, 0.61, 0.36, 1) 0.6s both;
+}
+
+#birthday-sub {
+  position: absolute;
+  top: calc(50% + clamp(2.6rem, 7vw, 5rem) * 1.35 + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(240,235,224,0.55);
+  pointer-events: none;
+  white-space: nowrap;
+  animation: msgAppear 1s ease 1.4s both;
+}
+
+@keyframes msgAppear {
+  from { opacity: 0; transform: translate(-50%, -44%) scale(0.93); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
