@@ -126,7 +126,7 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text);
   margin-top: 36px;
   opacity: 0;
   transform: translateY(10px);
@@ -402,15 +402,21 @@ body {
   #hero-video {
     inset: 0;
     height: 100%;
+    object-position: 75% center;
+  }
+
+  #hero {
+    justify-content: center;
   }
 
   .hero-grad-left {
-    background: linear-gradient(to bottom, var(--bg) 0%, rgba(15,14,12,0.85) 35%, rgba(15,14,12,0.2) 70%, transparent 100%);
+    background: rgba(10, 9, 8, 0.5);
   }
 
   .hero-inner {
     padding: 100px 24px 70px;
     max-width: 100%;
+    text-align: center;
   }
 
   #galeria {
