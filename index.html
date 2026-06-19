@@ -13,6 +13,21 @@
 <body>
 
 <header id="hero">
+  <!-- Video de fondo cinematic -->
+  <video
+    id="hero-video"
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4"
+    muted
+    playsinline
+    preload="auto"
+    aria-hidden="true"
+  ></video>
+
+  <!-- Gradientes sobre el video -->
+  <div class="hero-grad-top" aria-hidden="true"></div>
+  <div class="hero-grad-bottom" aria-hidden="true"></div>
+
+  <!-- Contenido del hero -->
   <div class="hero-inner">
     <div class="signature-block">
       <h1 class="name">Gabriel Charlin</h1>
@@ -33,10 +48,9 @@
 <section id="sobre">
   <div class="sobre-inner">
     <p class="sobre-text">
-      Gabriel Charlin pinta desde que tiene memoria. Sus cuadros son ventanas: el árbol
-      que dobla con el viento del sur, el gallo que reina en el gallinero, la iglesia de
-      pueblo con el cielo de tarde detrás. Cada obra está hecha de paciencia, turpentina
-      y luz de fin de día.
+      Gabriel Charlin tiene 67 años y pinta desde antes de que alguien le dijera que era posible.
+      De profesión hace radio, de alma es gaucho: el mate temprano, el campo, los gallos que cantan
+      antes de que salga el sol. Sus cuadros no necesitan explicación. Ya está todo dicho en el lienzo.
     </p>
   </div>
 </section>
@@ -52,6 +66,7 @@
   <button id="lb-prev" aria-label="Anterior">&#x2039;</button>
   <div class="lb-img-wrap">
     <img id="lb-img" src="" alt="">
+    <p id="lb-title" class="lb-title"></p>
   </div>
   <button id="lb-next" aria-label="Siguiente">&#x203A;</button>
 </div>
