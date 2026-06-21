@@ -20,9 +20,9 @@ const SITE = {
   // ──────────────────────────────────────────────────────────────
   //  SOBRE ÉL — texto de presentación
   // ──────────────────────────────────────────────────────────────
-  sobre: `Gabriel Charlin tiene 67 años y pinta desde antes de que alguien le dijera que era posible.
-De profesión hace radio, de alma es gaucho: el mate temprano, el campo, los gallos que cantan
-antes de que salga el sol. Sus cuadros no necesitan explicación. Ya está todo dicho en el lienzo.`,
+  sobre: `Gabriel Charlin pinta desde siempre. No como oficio aprendido,
+sino como algo que siempre estuvo ahí. En cada cuadro hay algo del campo,
+de la luz de la tarde, de lo cotidiano visto con otros ojos.`,
 
   // ──────────────────────────────────────────────────────────────
   //  FOOTER
