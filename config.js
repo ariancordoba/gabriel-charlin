@@ -20,8 +20,7 @@ const SITE = {
   // ──────────────────────────────────────────────────────────────
   //  SOBRE ÉL — texto de presentación
   // ──────────────────────────────────────────────────────────────
-  sobre: `Gabriel Charlin pinta desde siempre. No como oficio aprendido,
-sino como algo que siempre estuvo ahí. En cada cuadro hay algo del campo,
+  sobre: `Gabriel Charlin pinta desde siempre. En cada cuadro hay algo del campo,
 de la luz de la tarde, de lo cotidiano visto con otros ojos.`,
 
   // ──────────────────────────────────────────────────────────────
